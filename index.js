@@ -1,28 +1,56 @@
-  const { MessageButton, MessageActionRow } = require('discord-buttons'); 
-require('discord-buttons')(client);
-  
-  client.on("message", (message) => {
-if (message.content !== "PREFIX + COMMAND NAME") return;
-  const embed = new discord.MessageEmbed()
-  .setTitle("ANY TIME")
-  .setDescription("DESCRIPTION")
-  .setColor('#800080')
-  
-  let BUTTON NAME = new MessageButton()
-   .setLabel("LABEL")
-   .setStyle("COLOR")
-   .setEmoji("EMOJI")
-  .setURL("LINK")
-  .setStyle("url")
+const { MessageMenu, MessageActionRow } = require("discord-buttons")
 
 
-  message.channel.send({
-    button: NAME,
-    embed: embed 
-  });
-})
-client.on('clickButton', async (button) => {
-    if (button.id !== "NAME") return;
-    button.reply.send('You are now following me.', true)
-    
-})
+
+    client.on("message", message => {
+    if (message.content.startsWith(prefix + 'command name')) {
+        var button1 = new MessageButton()
+            .setLabel("LABEL")
+            .setURL("URL LINK")
+            .setEmoji("EMOJO")
+            .setStyle("url")
+      
+      var button2 = new MessageButton()
+            .setLabel("Starter")
+            .setURL("URL LINK")
+            .setEmoji("EMOJI")
+            .setStyle("url")
+     
+      var button3 = new MessageButton()
+            .setLabel("URL LINK")
+            .setEmoji("EMOJI")
+            .setURL("URL")
+            .setStyle("url")
+
+       var button4 = new MessageButton()
+            .setLabel("LABEL")
+            .setStyle("url")
+            .setEmoji("EMOJI")
+            .setURL("URL LINK")
+
+
+
+
+
+
+
+
+
+      
+        var row = new MessageActionRow()
+            .addComponent(button1)
+            .addComponent(button2)      
+            .addComponent(button3)
+            .addComponent(button4)
+     
+
+      
+  
+
+        var embed = new discord.MessageEmbed()
+            .setTitle("codes")
+            .setDescription("label")
+
+        message.channel.send(embed, row)
+    }
+    })
