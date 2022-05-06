@@ -1,2 +1,2 @@
 # Discord-Buttons
-make links with discord buttons
+Easy way to get links by discord buttons
